@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #F0E68C;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutY="34.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
+         <children>
+            <Button fx:id="work_button" layoutX="31.0" layoutY="139.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Работники">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="jobs_button" layoutX="31.0" layoutY="202.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Вакансии">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField layoutX="542.0" layoutY="246.0" prefHeight="26.0" prefWidth="108.0" />
+            <Button fx:id="connect_button" layoutX="542.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #F08080;" text="Связь" textFill="#080808">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="259.0" prefHeight="35.0" prefWidth="108.0" text="Биржа" textAlignment="CENTER" textFill="#915959">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" text="Труда" textFill="#915959">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
