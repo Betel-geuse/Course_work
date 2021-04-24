@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,21 +31,28 @@ public class Controller {
 
     @FXML
     void Work_Action(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("app.fxml"));
-
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
+        root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
 
         }
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    @FXML
 
+    void Jobs_action(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void initialize() {
-        assert workButton != null : "fx:id=\"workButton\" was not injected: check your FXML file 'sample.fxml'.";
-        assert connect_button != null : "fx:id=\"connect_button\" was not injected: check your FXML file 'sample.fxml'.";
-        assert jobs_button != null : "fx:id=\"jobs_button\" was not injected: check your FXML file 'sample.fxml'.";
 
     }
 }

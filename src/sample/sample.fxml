@@ -21,7 +21,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="jobs_button" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Вакансии">
+            <Button fx:id="jobs_button" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" onAction="#Jobs_action" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Вакансии">
                <font>
                   <Font size="14.0" />
                </font>
