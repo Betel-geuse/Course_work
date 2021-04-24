@@ -10,21 +10,24 @@
     <children>
         <AnchorPane layoutY="34.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
             <children>
-                <TextField layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Название фирмы" />
-                <TextField layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Ценовое приложение" />
-                <Button fx:id="back_button_2" layoutX="269.0" layoutY="293.0" mnemonicParsing="false" onAction="#back_action_2" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: #FFE4B5;" text="Назад" textFill="#0b0b0b">
-                    <font>
-                        <Font name="System Italic" size="14.0" />
-                    </font>
-                </Button>
+                <TextField layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="ФИО" />
+                <TextField layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Квалификация" />
+            <TextField layoutX="402.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Зароботная плата" />
+            <TextField layoutX="402.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" />
+            <Label layoutX="255.0" layoutY="27.0" prefHeight="18.0" prefWidth="160.0" />
+            <Button fx:id="get_button" layoutX="530.0" layoutY="289.0" mnemonicParsing="false" onAction="#get_action_1" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Отправить" textFill="#0b0b0b">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="back_button_2" layoutX="50.0" layoutY="289.0" mnemonicParsing="false" onAction="#back_action_2" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Назад" textFill="#0b0b0b">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
-        <Label layoutX="259.0" prefHeight="35.0" prefWidth="108.0" text="Биржа" textAlignment="CENTER" textFill="#915959">
-            <font>
-                <Font name="System Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="360.0" text="Труда" textFill="#915959">
+        <Label layoutX="279.0" prefHeight="35.0" prefWidth="122.0" text="Вакансии" textAlignment="JUSTIFY" textFill="#915959">
             <font>
                 <Font name="System Bold Italic" size="24.0" />
             </font>

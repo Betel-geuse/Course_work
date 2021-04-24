@@ -29,30 +29,36 @@ public class Controller {
     @FXML
     private Button jobs_button;
 
-    @FXML
-    void Work_Action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("app.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-        }
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
 
+    @FXML
     void Jobs_action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
+
+    void Work_Action(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
+    @FXML
     void initialize() {
+        assert workButton != null : "fx:id=\"workButton\" was not injected: check your FXML file 'sample.fxml'.";
+        assert connect_button != null : "fx:id=\"connect_button\" was not injected: check your FXML file 'sample.fxml'.";
+        assert jobs_button != null : "fx:id=\"jobs_button\" was not injected: check your FXML file 'sample.fxml'.";
 
     }
 }

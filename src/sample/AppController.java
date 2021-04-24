@@ -21,23 +21,37 @@ public class AppController {
     private URL location;
 
     @FXML
+    private Button get_button;
+
+    @FXML
     private Button back_button_2;
-    
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     @FXML
     void back_action_2(ActionEvent event)throws IOException {
-            root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+
+    @FXML
+    void get_action_2(ActionEvent event) {
+
     }
 
     @FXML
     void initialize() {
+        assert get_button != null : "fx:id=\"get_button\" was not injected: check your FXML file 'app.fxml'.";
         assert back_button_2 != null : "fx:id=\"back_button_2\" was not injected: check your FXML file 'app.fxml'.";
 
+    }
+
+    public void get_action_1(ActionEvent actionEvent) {
     }
 }

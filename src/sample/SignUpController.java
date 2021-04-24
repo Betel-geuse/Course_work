@@ -42,4 +42,7 @@ public class SignUpController {
         assert back_button_1 != null : "fx:id=\"back_button_1\" was not injected: check your FXML file 'SignUp.fxml'.";
 
     }
+
+    public void get_action(ActionEvent actionEvent) {
+    }
 }
