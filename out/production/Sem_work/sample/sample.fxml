@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -10,20 +9,24 @@
    <children>
       <AnchorPane layoutY="34.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
          <children>
-            <Button fx:id="workButton" layoutX="14.0" layoutY="205.0" mnemonicParsing="false" onAction="#Work_Action" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Работники">
+            <Button fx:id="workButton" layoutX="417.0" layoutY="149.0" mnemonicParsing="false" onAction="#Work_Action" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FFE4B5;" text="Вакансии">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="564.0" layoutY="247.0" prefHeight="26.0" prefWidth="108.0" />
-            <Button fx:id="connect_button" layoutX="564.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #F08080;" text="Связь" textFill="#080808">
+            <Button fx:id="jobs_button" layoutX="120.0" layoutY="149.0" mnemonicParsing="false" onAction="#Jobs_action" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FFE4B5;" text="Работники">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="jobs_button" layoutX="14.0" layoutY="119.0" mnemonicParsing="false" onAction="#Jobs_action" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #F08080;" text="Вакансии">
+            <Button fx:id="data_button1" layoutX="120.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataWork_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Работников">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="data_button2" layoutX="408.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataJobs_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Вакансий">
+               <font>
+                  <Font name="System Italic" size="14.0" />
                </font>
             </Button>
          </children>
