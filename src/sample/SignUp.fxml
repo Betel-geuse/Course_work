@@ -10,10 +10,10 @@
     <children>
         <AnchorPane layoutY="35.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
             <children>
-                <TextField layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Название фирмы" />
-                <TextField layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Вид деятельности" />
-            <TextField layoutX="401.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Номер телефона" />
-            <TextField layoutX="401.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Адрес" />
+                <TextField fx:id="Name_Firm" layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Название фирмы" />
+                <TextField fx:id="Activ" layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Вид деятельности" />
+            <TextField fx:id="Number" layoutX="401.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Номер телефона" />
+            <TextField fx:id="Addr" layoutX="401.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Адрес" />
             <Button fx:id="get_button_2" layoutX="536.0" layoutY="284.0" mnemonicParsing="false" onAction="#get_action" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Отправить" textFill="#0b0b0b">
                <font>
                   <Font name="System Italic" size="14.0" />
