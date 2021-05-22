@@ -10,15 +10,32 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class AppController {
+    @FXML
+    private URL location;
+
+    @FXML
+    private TextField Name_w;
+
+    @FXML
+    private TextField qualification_w;
+
+    @FXML
+    private TextField salary_w;
+
+    @FXML
+    private TextField speciality_w;
+
+    @FXML
+    private TextField phone_w;
 
     @FXML
     private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+
 
     @FXML
     private Button get_button;
@@ -52,6 +69,9 @@ public class AppController {
 
     }
 
-    public void get_action_1(ActionEvent actionEvent) {
+    @FXML
+    DataBaseHandler dbHandler2 = new DataBaseHandler();
+   public void to_datawork(ActionEvent event) {
+        dbHandler2.SignUpWork(Name_w.getText(),qualification_w.getText(),speciality_w.getText(),salary_w.getText(),phone_w.getText());
     }
 }

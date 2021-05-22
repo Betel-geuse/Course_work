@@ -26,8 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="6472f953-b006-41e9-82ca-2b942cda92bb">
-        <schema name="mydbtest" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
-        <schema name="mysql" object-types="table, view, procedure, function" />
+        <schema name="mydbtest" object-types="table, view, procedure, function" />
       </connection>
     </loaded-nodes>
   </component>
