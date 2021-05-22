@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Controller {
+public class MenuController {
 
     @FXML
     private ResourceBundle resources;
@@ -41,7 +41,7 @@ public class Controller {
 
     @FXML
     void Jobs_action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/Workers.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -51,7 +51,7 @@ public class Controller {
     @FXML
 
     void Work_Action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/Vacation.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -61,7 +61,7 @@ public class Controller {
     }
     @FXML
     void DataJobs_action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("DataWork.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/DataWork.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -71,7 +71,7 @@ public class Controller {
 
     @FXML
     void DataWork_action(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("DataJobs.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/DataJobs.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -80,10 +80,10 @@ public class Controller {
 
     @FXML
     void initialize() {
-        assert workButton != null : "fx:id=\"workButton\" was not injected: check your FXML file 'sample.fxml'.";
-        assert jobs_button != null : "fx:id=\"jobs_button\" was not injected: check your FXML file 'sample.fxml'.";
-        assert data_button1 != null : "fx:id=\"data_button1\" was not injected: check your FXML file 'sample.fxml'.";
-        assert data_button2 != null : "fx:id=\"data_button2\" was not injected: check your FXML file 'sample.fxml'.";
+        assert workButton != null : "fx:id=\"workButton\" was not injected: check your FXML file 'Menu.fxml'.";
+        assert jobs_button != null : "fx:id=\"jobs_button\" was not injected: check your FXML file 'Menu.fxml'.";
+        assert data_button1 != null : "fx:id=\"data_button1\" was not injected: check your FXML file 'Menu.fxml'.";
+        assert data_button2 != null : "fx:id=\"data_button2\" was not injected: check your FXML file 'Menu.fxml'.";
 
     }
 }

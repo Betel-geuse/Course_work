@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AppController {
+public class VacationController {
     @FXML
     private URL location;
 
@@ -48,7 +48,7 @@ public class AppController {
     private Parent root;
     @FXML
     void back_action_2(ActionEvent event)throws IOException {
-        root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/Menu.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -64,8 +64,8 @@ public class AppController {
 
     @FXML
     void initialize() {
-        assert get_button != null : "fx:id=\"get_button\" was not injected: check your FXML file 'app.fxml'.";
-        assert back_button_2 != null : "fx:id=\"back_button_2\" was not injected: check your FXML file 'app.fxml'.";
+        assert get_button != null : "fx:id=\"get_button\" was not injected: check your FXML file 'Vacation.fxml'.";
+        assert back_button_2 != null : "fx:id=\"back_button_2\" was not injected: check your FXML file 'Vacation.fxml'.";
 
     }
 

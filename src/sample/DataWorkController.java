@@ -27,7 +27,7 @@ public class DataWorkController {
     private Parent root;
     @FXML
     void back_action_4(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/Menu.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

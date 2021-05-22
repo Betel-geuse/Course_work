@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class SignUpController {
+public class WorkersController {
 
     @FXML
     private ResourceBundle resources;
@@ -44,7 +44,7 @@ public class SignUpController {
     private Parent root;
     @FXML
     void back_action_1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXML/Menu.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -55,12 +55,12 @@ public class SignUpController {
 
     @FXML
     void initialize() {
-        assert Name_Firm != null : "fx:id=\"Name_Firm\" was not injected: check your FXML file 'SignUp.fxml'.";
-        assert Activ != null : "fx:id=\"Activ\" was not injected: check your FXML file 'SignUp.fxml'.";
-        assert Number != null : "fx:id=\"Number\" was not injected: check your FXML file 'SignUp.fxml'.";
-        assert Addr != null : "fx:id=\"Addr\" was not injected: check your FXML file 'SignUp.fxml'.";
-        assert get_button_2 != null : "fx:id=\"get_button_2\" was not injected: check your FXML file 'SignUp.fxml'.";
-        assert back_button_1 != null : "fx:id=\"back_button_1\" was not injected: check your FXML file 'SignUp.fxml'.";
+        assert Name_Firm != null : "fx:id=\"Name_Firm\" was not injected: check your FXML file 'Workers.fxml'.";
+        assert Activ != null : "fx:id=\"Activ\" was not injected: check your FXML file 'Workers.fxml'.";
+        assert Number != null : "fx:id=\"Number\" was not injected: check your FXML file 'Workers.fxml'.";
+        assert Addr != null : "fx:id=\"Addr\" was not injected: check your FXML file 'Workers.fxml'.";
+        assert get_button_2 != null : "fx:id=\"get_button_2\" was not injected: check your FXML file 'Workers.fxml'.";
+        assert back_button_1 != null : "fx:id=\"back_button_1\" was not injected: check your FXML file 'Workers.fxml'.";
 
     }
     DataBaseHandler dbHandler = new DataBaseHandler();
