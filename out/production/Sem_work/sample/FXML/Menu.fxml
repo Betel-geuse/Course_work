@@ -19,12 +19,12 @@
                   <Font name="System Italic" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="data_button1" layoutX="120.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataWork_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Работников">
+            <Button fx:id="data_button1" layoutX="120.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataWork_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Вакансий">
                <font>
                   <Font name="System Italic" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="data_button2" layoutX="408.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataJobs_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Вакансий">
+            <Button fx:id="data_button2" layoutX="408.0" layoutY="249.0" mnemonicParsing="false" onAction="#DataJobs_action" prefHeight="35.0" prefWidth="145.0" style="-fx-background-color: #FFE4B5;" text="База Работников">
                <font>
                   <Font name="System Italic" size="14.0" />
                </font>

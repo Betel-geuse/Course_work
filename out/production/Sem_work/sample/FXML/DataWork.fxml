@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -9,11 +11,20 @@
     <children>
         <AnchorPane layoutY="35.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
             <children>
-                <Button fx:id="back_button_4" layoutX="38.0" layoutY="284.0" mnemonicParsing="false" onAction="#back_action_4" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Назад" textFill="#0b0b0b">
+                <Button fx:id="back_button_4" layoutY="322.0" mnemonicParsing="false" onAction="#back_action_4" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Назад" textFill="#0b0b0b">
                     <font>
                         <Font name="System Italic" size="14.0" />
                     </font>
                 </Button>
+            <TableView prefHeight="322.0" prefWidth="700.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="id" />
+                <TableColumn prefWidth="146.4000015258789" text="Квалификация" />
+                  <TableColumn prefWidth="151.20001220703125" text="Специальность" />
+                  <TableColumn prefWidth="166.39993286132812" text="Зарплата" />
+                  <TableColumn prefWidth="159.2000732421875" text="Номер телефона" />
+              </columns>
+            </TableView>
             </children>
         </AnchorPane>
         <Label layoutX="234.0" prefHeight="35.0" prefWidth="231.0" text="База Работников" textAlignment="CENTER" textFill="#915959">
