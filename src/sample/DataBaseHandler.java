@@ -1,11 +1,13 @@
 package sample;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.*;
+
 public class DataBaseHandler extends  Configs {
     Connection dbConnection;
+    //Connection conn = null;
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName;
@@ -63,4 +65,28 @@ public class DataBaseHandler extends  Configs {
         }
 
     }
+
+    public static ObservableList<jobs> getDatausers() throws SQLException, ClassNotFoundException {
+
+       Connection dbConnection = new DataBaseHandler().getDbConnection();
+        ObservableList<jobs> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = dbConnection.prepareStatement("select * from jobs");
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new jobs(Integer.parseInt(rs.getString("id")), rs.getString("name_firm"), rs.getString("activity"), rs.getString("addres"), rs.getString("phoneNumber")));
+            }
+        }
+        catch (SQLException throwables2){
+            throwables2.printStackTrace();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return list;
+    }
+
 }

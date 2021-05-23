@@ -16,12 +16,13 @@
                         <Font name="System Italic" size="14.0" />
                     </font>
                 </Button>
-            <TableView prefHeight="327.0" prefWidth="700.0">
+            <TableView fx:id="table_user" prefHeight="327.0" prefWidth="700.0">
               <columns>
-                <TableColumn prefWidth="155.20001828670502" text="Название Фирмы" />
-                <TableColumn prefWidth="192.79998779296875" text="Вид Деятельности" />
-                  <TableColumn prefWidth="162.39996337890625" text="Адресс" />
-                  <TableColumn prefWidth="186.39996337890625" text="Номер телефона" />
+                <TableColumn fx:id="id_col" prefWidth="53.599974036216736" text="id" />
+                <TableColumn fx:id="firm_col" prefWidth="176.79999542236328" text="Название фирмы" />
+                  <TableColumn fx:id="activity_col" prefWidth="164.79998779296875" text="Вид Деятельности" />
+                  <TableColumn fx:id="addres_col" minWidth="0.0" prefWidth="117.59994506835938" text="Адрес" />
+                  <TableColumn fx:id="phone_col" prefWidth="186.4000244140625" text="Номер телефона" />
               </columns>
             </TableView>
             </children>
