@@ -4,19 +4,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #F0E68C;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DataJobsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="706.0" style="-fx-background-color: #F0E68C;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DataJobsController">
     <children>
-        <AnchorPane layoutY="35.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
+        <AnchorPane layoutY="35.0" prefHeight="329.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
             <children>
                 <Button fx:id="back_button_5" layoutY="327.0" mnemonicParsing="false" onAction="#back_action_5" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Назад" textFill="#0b0b0b">
                     <font>
                         <Font name="System Italic" size="14.0" />
                     </font>
                 </Button>
-            <TableView fx:id="table_user" prefHeight="327.0" prefWidth="700.0">
+            <TableView fx:id="table_user" onMouseClicked="#GetSelect" prefHeight="326.0" prefWidth="700.0">
               <columns>
                 <TableColumn fx:id="id_col" prefWidth="53.599974036216736" text="id" />
                 <TableColumn fx:id="firm_col" prefWidth="176.79999542236328" text="Название фирмы" />
@@ -37,5 +38,6 @@
                 <Font name="System Bold Italic" size="24.0" />
             </font>
         </Label>
+      <TextField fx:id="txt_id" layoutX="536.0" layoutY="5.0" promptText="id" />
     </children>
 </AnchorPane>

@@ -1,7 +1,9 @@
 package sample;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,14 +19,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class DataWorkController {
 
     @FXML
     private ResourceBundle resources;
-
+    @FXML
+    private TextField txt_id2;
     @FXML
     private URL location;
     @FXML
@@ -60,7 +66,7 @@ public class DataWorkController {
         stage.show();
     }
     @FXML
-    int index = 1;
+    int index1 = -1;
     ObservableList<DislpayWorkers> listN;
     ResultSet rs = null;
     PreparedStatement pst = null;
@@ -83,5 +89,23 @@ public class DataWorkController {
             e.printStackTrace();
         }
         table_user2.setItems(listN);
+    }
+    @FXML
+    private Button delete_buuton2;
+
+    @FXML
+    void Delete_job(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Connection dbConnection26 = new DataBaseHandler().getDbConnection();
+        String sql2 = "DELETE FROM workers WHERE id =?";
+        pst = dbConnection26.prepareStatement(sql2);
+        pst.setString(1, txt_id2.getText());
+        pst.execute();
+        JOptionPane.showMessageDialog(null,"Delete");
+    }
+
+
+    public void GetSelect2(javafx.scene.input.MouseEvent mouseEvent) {
+        index1 = table_user2.getSelectionModel().getSelectedIndex();
+        txt_id2.setText(id_col2.getCellData(index1).toString());
     }
 }
