@@ -10,12 +10,12 @@
     <children>
         <AnchorPane layoutY="34.0" prefHeight="369.0" prefWidth="700.0" style="-fx-background-color: #FFFFE0;">
             <children>
-                <TextField fx:id="Name_w" layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="ФИО" />
-                <TextField fx:id="qualification_w" layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Квалификация" />
-            <TextField fx:id="salary_w" layoutX="402.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Желаемая зароботная плата" />
-            <TextField fx:id="speciality_w" layoutX="402.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Проффесия" />
+                <TextField fx:id="Name_worker" layoutX="38.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="ФИО" />
+                <TextField fx:id="qualification_worker" layoutX="38.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Квалификация" />
+            <TextField fx:id="salary_worker" layoutX="402.0" layoutY="68.0" prefHeight="26.0" prefWidth="231.0" promptText="Желаемая зароботная плата" />
+            <TextField fx:id="speciality_worker" layoutX="402.0" layoutY="113.0" prefHeight="26.0" prefWidth="231.0" promptText="Проффесия" />
             <Label layoutX="255.0" layoutY="27.0" prefHeight="18.0" prefWidth="160.0" />
-            <Button fx:id="get_button" layoutX="530.0" layoutY="289.0" mnemonicParsing="false" onAction="#to_datawork" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Отправить" textFill="#0b0b0b">
+            <Button fx:id="get_button" layoutX="530.0" layoutY="289.0" mnemonicParsing="false" onAction="#to_dataworkers" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Отправить" textFill="#0b0b0b">
                <font>
                   <Font name="System Italic" size="14.0" />
                </font>
@@ -25,7 +25,7 @@
                   <Font name="System Italic" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="phone_w" layoutX="402.0" layoutY="158.0" prefHeight="26.0" prefWidth="231.0" promptText="Телефон" />
+            <TextField fx:id="phone_worker" layoutX="402.0" layoutY="158.0" prefHeight="26.0" prefWidth="231.0" promptText="Телефон" />
             </children>
         </AnchorPane>
         <Label layoutX="279.0" prefHeight="35.0" prefWidth="122.0" text="Вакансии" textAlignment="JUSTIFY" textFill="#915959">

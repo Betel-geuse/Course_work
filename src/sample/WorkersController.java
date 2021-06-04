@@ -2,7 +2,11 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import com.mysql.cj.x.protobuf.MysqlxCrud;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +17,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class WorkersController {
+import javax.swing.*;
+
+public class WorkersController extends  DataJobsController{
 
     @FXML
     private ResourceBundle resources;
@@ -67,4 +73,6 @@ public class WorkersController {
     public void get_action(ActionEvent actionEvent) {
         dbHandler.SignUpUser(Name_Firm.getText(),Activ.getText(),Addr.getText(),Number.getText());
     }
+
+
 }

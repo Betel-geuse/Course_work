@@ -1,6 +1,6 @@
 package sample;
 
-public class jobs {
+public class DisplayJobs {
     int id;
     String name_firm, activity, addres, phoneNumber;
 
@@ -24,6 +24,8 @@ public class jobs {
         return addres;
     }
 
+
+
     public void setId(int id) {
         this.id = id;
     }
@@ -44,7 +46,7 @@ public class jobs {
         this.phoneNumber = phoneNumber;
     }
 
-    public jobs(int id, String name_firm, String activity, String addres, String phoneNumber) {
+    public DisplayJobs(int id, String name_firm, String activity, String addres, String phoneNumber) {
         this.id = id;
         this.name_firm = name_firm;
         this.activity = activity;

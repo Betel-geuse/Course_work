@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class DataJobsController {
+public class DataJobsController  {
 
     @FXML
     private ResourceBundle resources;
@@ -29,21 +30,21 @@ public class DataJobsController {
     private URL location;
 
     @FXML
-    private TableView<jobs> table_user;
+    private TableView<DisplayJobs> table_user;
     @FXML
-    private TableColumn<jobs, Integer> id_col;
+    private TableColumn<DisplayJobs, Integer> id_col;
 
     @FXML
-    private TableColumn<jobs, String> firm_col;
+    private TableColumn<DisplayJobs, String> firm_col;
 
     @FXML
-    private TableColumn<jobs, String> activity_col;
+    private TableColumn<DisplayJobs, String> activity_col;
 
     @FXML
-    private TableColumn<jobs, String> addres_col;
+    private TableColumn<DisplayJobs, String> addres_col;
 
     @FXML
-    private TableColumn<jobs, String> phone_col;
+    private TableColumn<DisplayJobs, String> phone_col;
 
     @FXML
     private Button back_button_5;
@@ -59,7 +60,7 @@ public class DataJobsController {
         stage.show();
     }
     int index = 1;
-    ObservableList<jobs> listM;
+    ObservableList<DisplayJobs> listM;
     ResultSet rs = null;
     PreparedStatement pst = null;
 
@@ -67,11 +68,11 @@ public class DataJobsController {
     void initialize() {
         DataBaseHandler  dbHanlder3 = new DataBaseHandler();
         assert back_button_5 != null : "fx:id=\"back_button_5\" was not injected: check your FXML file 'DataJobs.fxml'.";
-        id_col.setCellValueFactory(new PropertyValueFactory<jobs,Integer>("id"));
-        firm_col.setCellValueFactory(new PropertyValueFactory<jobs,String>("name_firm"));
-        activity_col.setCellValueFactory(new PropertyValueFactory<jobs,String>("activity"));
-        addres_col.setCellValueFactory(new PropertyValueFactory<jobs, String>("addres"));
-        phone_col.setCellValueFactory(new PropertyValueFactory<jobs,String>("phoneNumber"));
+        id_col.setCellValueFactory(new PropertyValueFactory<DisplayJobs,Integer>("id"));
+        firm_col.setCellValueFactory(new PropertyValueFactory<DisplayJobs,String>("name_firm"));
+        activity_col.setCellValueFactory(new PropertyValueFactory<DisplayJobs,String>("activity"));
+        addres_col.setCellValueFactory(new PropertyValueFactory<DisplayJobs, String>("addres"));
+        phone_col.setCellValueFactory(new PropertyValueFactory<DisplayJobs,String>("phoneNumber"));
         try {
             listM = DataBaseHandler.getDatausers();
         } catch (SQLException throwables) {
@@ -82,4 +83,13 @@ public class DataJobsController {
         table_user.setItems(listM);
     }
 
-}
+    @FXML
+    private Button delete_buuton;
+
+    @FXML
+    void Delete_wor(ActionEvent event) {
+
+    }
+    }
+
+

@@ -66,16 +66,16 @@ public class DataBaseHandler extends  Configs {
 
     }
 
-    public static ObservableList<jobs> getDatausers() throws SQLException, ClassNotFoundException {
+    public static ObservableList<DisplayJobs> getDatausers() throws SQLException, ClassNotFoundException {
 
        Connection dbConnection = new DataBaseHandler().getDbConnection();
-        ObservableList<jobs> list = FXCollections.observableArrayList();
+        ObservableList<DisplayJobs> list = FXCollections.observableArrayList();
         try {
             PreparedStatement ps = dbConnection.prepareStatement("select * from jobs");
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new jobs(Integer.parseInt(rs.getString("id")), rs.getString("name_firm"), rs.getString("activity"), rs.getString("addres"), rs.getString("phoneNumber")));
+                list.add(new DisplayJobs(Integer.parseInt(rs.getString("id")), rs.getString("name_firm"), rs.getString("activity"), rs.getString("addres"), rs.getString("phoneNumber")));
             }
         }
         catch (SQLException throwables2){
@@ -88,5 +88,28 @@ public class DataBaseHandler extends  Configs {
 
         return list;
     }
+    public static ObservableList<DislpayWorkers> getDatausers2() throws SQLException, ClassNotFoundException {
+
+        Connection dbConnection2 = new DataBaseHandler().getDbConnection();
+        ObservableList<DislpayWorkers> list2 = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = dbConnection2.prepareStatement("select * from workers");
+
+            ResultSet rs2 = ps.executeQuery();
+            while (rs2.next()) {
+                list2.add(new DislpayWorkers(Integer.parseInt(rs2.getString("id")), rs2.getString("name"), rs2.getString("qualification"), rs2.getString("speciality"), rs2.getString("salary"),rs2.getString("phone_number")));
+            }
+        }
+        catch (SQLException throwables2){
+            throwables2.printStackTrace();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return list2;
+    }
+
 
 }

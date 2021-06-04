@@ -25,6 +25,11 @@
                   <TableColumn fx:id="phone_col" prefWidth="186.4000244140625" text="Номер телефона" />
               </columns>
             </TableView>
+            <Button fx:id="delete_buuton" layoutX="582.0" layoutY="327.0" mnemonicParsing="false" onAction="#Delete_wor" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #FFE4B5;" text="Удалить" textFill="#0b0b0b">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <Label layoutX="210.0" prefHeight="35.0" prefWidth="308.0" text="          Вакансии" textAlignment="CENTER" textFill="#915959">

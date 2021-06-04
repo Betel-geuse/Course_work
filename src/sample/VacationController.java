@@ -18,19 +18,19 @@ public class VacationController {
     private URL location;
 
     @FXML
-    private TextField Name_w;
+    private TextField Name_worker;
 
     @FXML
-    private TextField qualification_w;
+    private TextField qualification_worker;
 
     @FXML
-    private TextField salary_w;
+    private TextField salary_worker;
 
     @FXML
-    private TextField speciality_w;
-
+    private TextField speciality_worker;
     @FXML
-    private TextField phone_w;
+    private TextField phone_worker;
+
 
     @FXML
     private ResourceBundle resources;
@@ -64,14 +64,23 @@ public class VacationController {
 
     @FXML
     void initialize() {
+        assert Name_worker != null : "fx:id=\"Name_worker\" was not injected: check your FXML file 'Vacation.fxml'.";
+        assert qualification_worker != null : "fx:id=\"qualification_worker\" was not injected: check your FXML file 'Vacation.fxml'.";
+        assert salary_worker != null : "fx:id=\"salary_worker\" was not injected: check your FXML file 'Vacation.fxml'.";
+        assert speciality_worker != null : "fx:id=\"speciality_worker\" was not injected: check your FXML file 'Vacation.fxml'.";
         assert get_button != null : "fx:id=\"get_button\" was not injected: check your FXML file 'Vacation.fxml'.";
         assert back_button_2 != null : "fx:id=\"back_button_2\" was not injected: check your FXML file 'Vacation.fxml'.";
+        assert phone_worker != null : "fx:id=\"phone_worker\" was not injected: check your FXML file 'Vacation.fxml'.";
 
     }
 
+
     @FXML
     DataBaseHandler dbHandler2 = new DataBaseHandler();
-   public void to_datawork(ActionEvent event) {
-        dbHandler2.SignUpWork(Name_w.getText(),qualification_w.getText(),speciality_w.getText(),salary_w.getText(),phone_w.getText());
+
+
+    @FXML
+    void to_dataworkers(ActionEvent event) {
+        dbHandler2.SignUpWork(Name_worker.getText(),qualification_worker.getText(),speciality_worker.getText(),salary_worker.getText(),phone_worker.getText());
     }
 }
