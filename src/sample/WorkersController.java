@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 
-public class WorkersController extends  DataJobsController{
+public class WorkersController{
 
     @FXML
     private ResourceBundle resources;
@@ -59,6 +59,7 @@ public class WorkersController extends  DataJobsController{
     }
 
 
+
     @FXML
     void initialize() {
         assert Name_Firm != null : "fx:id=\"Name_Firm\" was not injected: check your FXML file 'Workers.fxml'.";
@@ -69,8 +70,10 @@ public class WorkersController extends  DataJobsController{
         assert back_button_1 != null : "fx:id=\"back_button_1\" was not injected: check your FXML file 'Workers.fxml'.";
 
     }
-    DataBaseHandler dbHandler = new DataBaseHandler();
+
+
     public void get_action(ActionEvent actionEvent) {
+    DataBaseHandler dbHandler = new DataBaseHandler();
         dbHandler.SignUpUser(Name_Firm.getText(),Activ.getText(),Addr.getText(),Number.getText());
     }
 

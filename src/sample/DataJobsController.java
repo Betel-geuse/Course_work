@@ -146,6 +146,12 @@ public class DataJobsController  {
             else if(person.getAddres().toLowerCase().indexOf(lowerCaseFilter) != -1){
                 return  true;
             }
+            else if(person.getName_firm().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                return  true;
+            }
+            else if(person.getPhoneNumber().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                return  true;
+            }
             else
                 return  false;
         });

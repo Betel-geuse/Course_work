@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +38,7 @@ public class DataWorkController {
     @FXML
     private TableView<DislpayWorkers> table_user2;
     @FXML
-    private TableColumn<DislpayWorkers,Integer> id_col2;
+    private TableColumn<DislpayWorkers, Integer> id_col2;
 
     @FXML
     private TableColumn<DislpayWorkers, String> name_col2;
@@ -57,6 +59,7 @@ public class DataWorkController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
     @FXML
     void back_action_4(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("FXML/Menu.fxml"));
@@ -65,22 +68,24 @@ public class DataWorkController {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     int index1 = -1;
     ObservableList<DislpayWorkers> listN;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    ObservableList<DislpayWorkers> Datalist;
 
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
         assert back_button_1 != null : "fx:id=\"back_button_4\" was not injected: check your FXML file 'DataWork.fxml'.";
         //DataBaseHandler  dbHanlder3 = new DataBaseHandler();
-        id_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers,Integer>("id"));
-        name_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers,String>("name"));
-        qualification_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers,String>("qualification"));
+        id_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, Integer>("id"));
+        name_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("name"));
+        qualification_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("qualification"));
         speciality_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("speciality"));
-        salary_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers,String>("salary"));
-        phone_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers,String>("phone_number"));
+        salary_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("salary"));
+        phone_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("phone_number"));
         try {
             listN = DataBaseHandler.getDatausers2();
         } catch (SQLException throwables) {
@@ -89,7 +94,9 @@ public class DataWorkController {
             e.printStackTrace();
         }
         table_user2.setItems(listN);
+        Search2();
     }
+
     @FXML
     private Button delete_buuton2;
 
@@ -100,12 +107,49 @@ public class DataWorkController {
         pst = dbConnection26.prepareStatement(sql2);
         pst.setString(1, txt_id2.getText());
         pst.execute();
-        JOptionPane.showMessageDialog(null,"Delete");
+        JOptionPane.showMessageDialog(null, "Delete");
     }
 
 
     public void GetSelect2(javafx.scene.input.MouseEvent mouseEvent) {
         index1 = table_user2.getSelectionModel().getSelectedIndex();
         txt_id2.setText(id_col2.getCellData(index1).toString());
+    }
+
+    void Search2() throws SQLException, ClassNotFoundException {
+        id_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, Integer>("id"));
+        name_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("name"));
+        qualification_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("qualification"));
+        speciality_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("speciality"));
+        salary_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("salary"));
+        phone_col2.setCellValueFactory(new PropertyValueFactory<DislpayWorkers, String>("phone_number"));
+
+        Datalist = DataBaseHandler.getDatausers2();
+        table_user2.setItems(Datalist);
+        FilteredList<DislpayWorkers> filteredData = new FilteredList<>(Datalist, b -> true);
+
+        txt_id2.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (person.getName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (person.getQualification().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (person.getSalary().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (person.getSpeciality().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (person.getPhone_number().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else
+                    return false;
+            });
+        });
+        SortedList<DislpayWorkers> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(table_user2.comparatorProperty());
+        table_user2.setItems(sortedData);
     }
 }
